@@ -71,4 +71,19 @@ int main() {
 	auto boundValue = std::bind(functionAvg, 3, 4);
 	std::cout << boundValue() << std::endl;
 	return 0;
+}///////////////////////////////////////
+
+
+int main() {
+	double(*functionAvg)(int, int) = average; // this is pointer to call average function
+	auto lambdaAvg = [] (int a, int b) { return (double)(a+b)/2 };
+	AverageClass functorAvg;
+
+	// std::cout << functionAvg(10, 11) << std::endl;
+	// std::cout << lambdaAvg(10, 11) << std::endl;
+	// std::cout << functorAvg(30, 11) << std::endl;
+
+	int a[] = { 43, 76, 2, 9, 53 };
+	std::cout << std::count_if(a + 1, a + 5, [](int i) { return i > 10.1 }) << std::endl;
+	return 0;
 }
