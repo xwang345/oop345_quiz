@@ -85,5 +85,32 @@ int main() {
 
 	int a[] = { 43, 76, 2, 9, 53 };
 	std::cout << std::count_if(a + 1, a + 5, [](int i) { return i > 10.1 }) << std::endl;
+
+	std::vector<std::string> str1 = { "Hello", "World", "from", "C++" };
+	std::vector<std::string> str2(5);
+	std::copy_if(str1.begin(), str1.end(), str2.begin(), [](std::string item) { return item.size() == 4; });
+
+
+	for (auto item ) {
+
+	}
+	return 0;
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+
+int main() {
+	double(*functionAvg)(int, int) = average; // this is pointer to call average function
+	auto lambdaAvg = [] (int a, int b) { return (double)(a+b)/2 };
+	AverageClass functorAvg;
+
+	std::cout << functionAvg(int, int) << std::endl;
+	std::cout << lambdaAvg(int, int) << std::endl;
+	std::cout << functorAvg(int, int) << std::endl;
+
+	std::vector<double> v = {432.1, 65.2, -1.1 };
+
+	std::accumulate(v.begin(), v.end(), []() {});
 	return 0;
 }
